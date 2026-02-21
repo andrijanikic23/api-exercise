@@ -9,4 +9,10 @@ class Currency extends Model
     protected $table = 'currencies';
 
     protected $fillable = ['code'];
+
+
+    public function country()
+    {
+        return $this->hasOne(Country::class, 'currency_id', 'id');
+    }
 }

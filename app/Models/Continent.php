@@ -9,4 +9,10 @@ class Continent extends Model
     protected $table = 'continents';
 
     protected $fillable = ['name'];
+
+
+    public function countries()
+    {
+        return $this->hasMany(Country::class, 'continent_id', 'id');
+    }
 }
